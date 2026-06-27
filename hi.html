@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +8,39 @@
 </head>
 
 <body>
+
     <div>
-        <h2 id="hd">Shikharr Noob </h2>
-        <p id="prop"> Gay Activist<br>
+        <h2 id="hd">Shikharr Noob</h2>
+
+        <p id="prop">
+            Gay Activist<br>
             Retard Chaser<br>
             Chaewon Lover<br>
             RR Final Boss<br>
         </p>
     </div>
+
     <span id="shik">
         <img src="shik1.jpeg" alt="Shikharr" class="profile-img default-img">
         <img src="shik2.png" alt="Shikharr" class="profile-img hover-img">
     </span>
+
+    <audio id="bgMusic" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        const shik = document.getElementById('shik');
-        const audio = new Audio('website_song_short_40s.mp3');
-        
-        shik.addEventListener('mouseenter', () => {
-            audio.currentTime = 0;
-            audio.play().catch(error => {
-                console.log('Audio playback prevented until user interacts with the document first:', error);
-            });
+        const shik = document.getElementById("shik");
+        const music = document.getElementById("bgMusic");
+
+        shik.addEventListener("mouseenter", () => {
+            music.play().catch(err => console.log(err));
         });
-        
-        shik.addEventListener('mouseleave', () => {
-            audio.pause();
+
+        shik.addEventListener("mouseleave", () => {
+            music.pause();
         });
     </script>
-</body>
 
+</body>
 </html>
