@@ -26,7 +26,7 @@
     </span>
 
     <audio id="bgMusic" loop>
-        <source src="song.mp3" type="audio/mpeg">
+        <source src="website_song_short_40s.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -39,6 +39,15 @@
 
         shik.addEventListener("mouseleave", () => {
             music.pause();
+        });
+
+        // Toggle play/pause on click (also satisfies user interaction requirement)
+        shik.addEventListener("click", () => {
+            if (music.paused) {
+                music.play().catch(err => console.log(err));
+            } else {
+                music.pause();
+            }
         });
     </script>
 
